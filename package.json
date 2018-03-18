@@ -25,6 +25,7 @@
     "cycle-storageify": "^4.0.0",
     "cyclejs-utils": "^3.1.0",
     "cyclic-router": "^5.1.7",
+    "snabbdom-jsx": "^0.4.2",
     "switch-path": "^1.2.0",
     "xstream": "^11.1.0"
   },
