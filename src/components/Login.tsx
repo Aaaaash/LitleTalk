@@ -1,12 +1,21 @@
 import xs from 'xstream';
 import { run } from '@cycle/run';
-import { div, makeDOMDriver, input, p, DOMSource } from '@cycle/dom';
-import { makeHTTPDriver, HTTPSource } from '@cycle/http';
 import { BaseSources } from '../interfaces';
 
 export function Login(sources: BaseSources) {
-  const vdom$ = xs.of(<div>login</div>);
+  const route$ = sources.DOM.select('.login-btn')
+    .events('click')
+    .mapTo('/other');
+
+  const vdom$ = xs.of(
+    <div>
+      <button className="login-btn">login</button>
+      <a href="/other">go other</a>
+    </div>
+  );
+
   return {
-    DOM: vdom$
+    DOM: vdom$,
+    router: route$,
   };
 }

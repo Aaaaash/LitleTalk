@@ -1,23 +1,22 @@
 import xs from 'xstream';
 import { run } from '@cycle/run';
-import { div, makeDOMDriver, input, p, DOMSource } from '@cycle/dom';
-import { makeHTTPDriver, HTTPSource } from '@cycle/http';
+import { makeDOMDriver } from '@cycle/dom';
 import { routerify } from 'cyclic-router';
 import { makeHistoryDriver } from '@cycle/history';
 import switchPath from 'switch-path';
 
 import { BaseSources, BaseSinks } from './interfaces';
-import { routes } from './routes';
+import { routes, RouteValue, initialRoute } from './routes';
 
-function main(sources) {
+function main(sources: BaseSources) {
   const match$ = sources.router.define(routes);
-  const page$ = match$.map(({ path, value }) => {
-    return value.component({ ...sources, props$: sources.router.path(path) });
+  const page$ = match$.map(({ path, value }: { path: any, value: RouteValue }) => {
+    return value.component({ ...sources, router: sources.router.path(path) });
   });
 
   return {
-    DOM: page$.map(c => c.DOM).flatten(),
-    router: xs.of('/other')
+    DOM: page$.map((c: BaseSinks) => c.DOM).flatten(),
+    router: xs.of(initialRoute),
   };
 }
 
