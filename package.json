@@ -40,7 +40,7 @@
     "eject": "cycle-scripts eject",
     "clean": "cycle-scripts clean"
   },
-  "lintStaged": {
+  "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "npm run format"
     ]
