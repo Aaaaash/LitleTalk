@@ -15,6 +15,6 @@ export function NotFoundPage(sources: BaseSources) {
 
   return {
     DOM: vdom$,
-    router: routes$,
+    router: routes$
   };
 }

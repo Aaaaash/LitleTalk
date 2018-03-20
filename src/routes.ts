@@ -12,7 +12,7 @@ export interface Routes {
 
 export const routes: Routes = {
   '/': { component: Login, scope: 'login' },
-  '/other': { component: NotFoundPage, scope: 'other' },
+  '/other': { component: NotFoundPage, scope: 'other' }
 };
 
 export const initialRoute = '/';

@@ -16,6 +16,6 @@ export function Login(sources: BaseSources) {
 
   return {
     DOM: vdom$,
-    router: route$,
+    router: route$
   };
 }

@@ -25,7 +25,9 @@
     "cycle-storageify": "^4.0.0",
     "cyclejs-utils": "^3.1.0",
     "cyclic-router": "^5.1.7",
+    "express": "^4.16.3",
     "snabbdom-jsx": "^0.4.2",
+    "socket.io": "^2.0.4",
     "switch-path": "^1.2.0",
     "xstream": "^11.1.0"
   },
@@ -40,8 +42,7 @@
   },
   "lintStaged": {
     "*.{js,jsx,ts,tsx}": [
-      "npm run format",
-      "git add"
+      "npm run format"
     ]
   },
   "nyc": {
