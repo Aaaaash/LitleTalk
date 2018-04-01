@@ -1,6 +1,5 @@
 import { Component } from './interfaces';
-import { Login } from './components/Login';
-import { NotFoundPage } from './components/NotFoundPage';
+import Login from './components/Login';
 
 export interface RouteValue {
   component: Component;
@@ -12,7 +11,6 @@ export interface Routes {
 
 export const routes: Routes = {
   '/': { component: Login, scope: 'login' },
-  '/other': { component: NotFoundPage, scope: 'other' }
 };
 
 export const initialRoute = '/';
